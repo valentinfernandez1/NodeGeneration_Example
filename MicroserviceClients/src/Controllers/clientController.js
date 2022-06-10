@@ -19,9 +19,11 @@ const controller = {
     
     let newRentedBooks = await Promise.all(
       obtainedClient.rentedBooks.map((bookInstance) => {
-        let rentedBooksEndpoint = process.env.MICROSERVICE_BOOKS_URL + "bookInstance/" + bookInstance
+        let rentedBooksEndpoint = process.env.MICROSERVICE_BOOKS_URL + "/api/entity/bookInstance/" + bookInstance
+        console.log(rentedBooksEndpoint)
         const data =  axios.get(rentedBooksEndpoint)
           .then((response) => response.data)
+          .catch(e => res.send(e))
         return data
       })
     )
