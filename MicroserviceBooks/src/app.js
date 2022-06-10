@@ -22,6 +22,12 @@ app.use( Cors() ); //Dependiendo si se selecciono la capacidad CORS
 //Routes
 app.get("/", (req,res) => res.sendStatus(200) );
 
+app.get('/health', (req,res,next)=> {
+  res.status(200); 
+  res.send('ok')
+})
+
+
 //acceso a ruta de entidades
 for (const route of entityResources) {
   app.use("/api/entity", route);
