@@ -1,15 +1,14 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
-const CitySchema = new mongoose.Schema(
-{
- name: {
+const CitySchema = new mongoose.Schema({
+  name: {
     type: String,
-    required:true
-    },
+    required: true,
+  },
   code: {
     type: String,
-    required:true
+    required: true,
   },
 });
 
-module.exports = mongoose.model("City", CitySchema);
+export default mongoose.model("City", CitySchema);

@@ -1,12 +1,12 @@
-const { Router } = require("express");
-const { getAll, getOneById, saveOne, updateOneById, deleteOneById } = require("../../Controllers/cityController")
+import { Router } from "express";
+import cityController from "../../Controllers/cityController.js";
 
 const router = Router();
 
-router.get("/city", getAll);
-router.get("/city/:id", getOneById);
-router.post("/city", saveOne);
-router.put("/city/:id", updateOneById);
-router.delete("/city/:id", deleteOneById);
+router.get("/city", cityController.getAll);
+router.get("/city/:id", cityController.getOneById);
+router.post("/city", cityController.saveOne);
+router.put("/city/:id", cityController.updateOneById);
+router.delete("/city/:id", cityController.deleteOneById);
 
-module.exports = router;
+export default router;

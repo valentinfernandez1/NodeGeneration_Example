@@ -1,13 +1,12 @@
 /**
- * Index permite separar por namespaces las rutas 
+ * Index permite separar por namespaces las rutas
  * e importarlas mucho mas facil luego.
  */
 
 //Entity Routes
-const authorRoute = require("./entityResources/clientRoute")
-const cityRoute = require("./entityResources/cityRoute")
+import authorRoute from "./entityResources/clientRoute.js";
+import cityRoute from "./entityResources/cityRoute.js";
 
-
-module.exports = {
+export default {
   entityResources: [authorRoute, cityRoute],
-}
+};
